@@ -42,6 +42,15 @@ python_package 'gunicorn' do
   action :upgrade # patching for security
 end
 
+python_package 'virtualenv' do
+  action :install
+end
+
 package 'python-psycopg2' do
   action :install
+end
+
+python_runtime '3' do
+  get_pip_url 'https://github.com/pypa/get-pip/raw/f88ab195ecdf2f0001ed21443e247fb32265cabb/get-pip.py'
+  pip_version '18.0'
 end

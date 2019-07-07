@@ -6,3 +6,4 @@
 
 include_recipe "cooking-django::install"
 include_recipe "cooking-django::db"
+include_recipe "cooking-django::django"
