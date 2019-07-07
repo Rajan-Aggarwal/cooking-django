@@ -1,0 +1,13 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=vagrant
+Group=nginx
+WorkingDirectory=/home/vagrant/cookbooks/cooking-django/website
+ExecStart=/usr/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/vagrant/cookbooks/cooking-django/website/website.sock website.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+

@@ -4,11 +4,14 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
-service 'nginx' do
-  enabled true
-  running true
-  supports :status => true, :restart => true, :reload => true
-  action [:start, :enabled]
+template '/etc/nginx/nginx.conf' do
+  source 'nginx.conf'
+  notifies :restart, 'service[nginx]', :immediately
 end
+
+service 'nginx' do
+  action [:restart, :enable]
+end
+
 
 
