@@ -8,8 +8,9 @@ service 'postgresql-9.6' do
   action :start
 end
 
-postgresql_server_conf 'PostgreSQL Config' do
-  notifies :reload, 'service[postgresql-9.6]'
+template '/var/lib/pgsql/9.6/data/pg_hba.conf' do
+  source 'pg_hba.conf'
+  notifies :restart, 'service[postgresql-9.6]', :immediately
 end
 
 postgresql_user 'vagrant' do
