@@ -13,7 +13,7 @@ package 'python-devel' do
 end
 
 postgresql_client_install 'PostgreSQL for Django App' do
-  version '9.5'
+  version '9.6'
 end
 
 postgresql_server_install 'Setup the server for the db' do
