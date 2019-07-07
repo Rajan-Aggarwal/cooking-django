@@ -4,6 +4,9 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
+# This recipe enlists all the installations
+# one must perform to configure the server.
+
 package 'epel-release' do
   action :install
 end
