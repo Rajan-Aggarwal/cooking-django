@@ -28,7 +28,7 @@ SECRET_KEY = 'mqin(-r+*mvd1=f83zazz^-+29nx&cspdof(nlz*x0zik3aw9r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.cooking-django.com']
 
 # Application definition
 
